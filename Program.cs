@@ -18,19 +18,28 @@ namespace actividad_10__07
             string nombre;
                 Console.WriteLine($"Ingrese  ID de productos");
                 int.TryParse(Console.ReadLine(), out clave);
+                 Console.WriteLine("ingrese nombre:");
+                 nombre = Console.ReadLine();
+                 producto.Add(clave, nombre);
+           bool valiadar= false;
+            while (valiadar != true)
+            {
+                Console.WriteLine($"Ingrese  ID de productos");
+                int.TryParse(Console.ReadLine(), out clave);
                 if (producto.ContainsKey(clave))
                 {
                     Console.WriteLine("valor ya ingresado ingrese otro");
-                    
+
                 }
                 else
                 {
                     Console.WriteLine("ingrese nombre:");
                     nombre = Console.ReadLine();
                     producto.Add(clave, nombre);
+                    valiadar = true;
 
                 }
-
+            }
             
             foreach (var item in producto)
             {
