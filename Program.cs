@@ -13,15 +13,15 @@ namespace actividad_10__07
         {
             Console.WriteLine("Cree un diccionario de productos. Antes de agregar un producto, verifique con ContainsKey si la clave ya existe.");
             
-
-
-                Console.WriteLine($"Ingrese  ID NO.{i + 1} de 3 productos");
+            Dictionary<int,string> producto = new Dictionary<int,string>();
+            int clave;
+            string nombre;
+                Console.WriteLine($"Ingrese  ID de productos");
                 int.TryParse(Console.ReadLine(), out clave);
                 if (producto.ContainsKey(clave))
                 {
                     Console.WriteLine("valor ya ingresado ingrese otro");
-                    i--;
-
+                    
                 }
                 else
                 {
@@ -31,7 +31,7 @@ namespace actividad_10__07
 
                 }
 
-            }
+            
             foreach (var item in producto)
             {
                 Console.WriteLine("prodcuto Id: " + item.Key + "valor: " + item.Value);
